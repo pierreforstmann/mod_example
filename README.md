@@ -1,4 +1,4 @@
-# mod_example
+# mod_examples
 https://httpd.apache.org/docs/2.4/developer/modguide.html
 
 ## to install
