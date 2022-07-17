@@ -1,5 +1,5 @@
 # mod_examples
-https://httpd.apache.org/docs/2.4/developer/modguide.html
+These are module examples from https://httpd.apache.org/docs/2.4/developer/modguide.html slightly modified: I have fixed some compilation warnings and renamed some fonctions and variables so that each module can be compiled and installed at the same time.
 
 ## to install
 ```
