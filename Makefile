@@ -1,3 +1,6 @@
+#
+# Makefile for mod_examples
+#
 MODULE1=mod_example_1
 MODULEA=mod_example_A
 MODULE2=mod_example_2
