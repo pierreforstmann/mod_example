@@ -39,9 +39,9 @@ mkdir /var/www/html/example3
 ```
 Run
 ```
-curl http://127.0.0.1/example1/1
+curl http://127.0.0.1/example1/
 curl http://127.0.0.1/example2/test.dat.sum
-curl http://127.0.0.1/example3/3
+curl http://127.0.0.1/example3/
 ```
 
 
