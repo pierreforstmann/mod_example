@@ -32,16 +32,17 @@ Add to httpd.conf:
     SetHandler example4-handler
 </Location>
 
+<Location "/example5">
+    SetHandler example5-handler
+</Location>
+
 ```
 Create directories and files:
 ```
-mkdir /var/www/html/example1
+
 mdkir /var/www/html/example2
 echo OK > /var/www/html/example2/test.dat
-mkdir /var/www/html/exampleA
-touch /var/www/html/exampleA/exampleA.txt
-mkdir /var/www/html/example3
-mkdir /var/www/html/example4
+
 ```
 Run:
 ```
@@ -49,6 +50,7 @@ curl http://127.0.0.1/example1/
 curl http://127.0.0.1/example2/test.dat.sum
 curl http://127.0.0.1/example3/
 curl http://127.0.0.1/example4/
+curl http://127.0.0.1/example5/
 ```
 
 
