@@ -13,6 +13,8 @@ MODULE4=mod_example4
 MODULE_NAME4=example4
 MODULE5=mod_example5
 MODULE_NAME5=example5
+MODULE5=mod_example6
+MODULE_NAME5=example6
 #
 APXS=/usr/bin/apxs
 
@@ -36,6 +38,9 @@ mod_example4:
 mod_example5:
 	$(APXS) -Wc,-g -c $@.c 
 
+mod_example6:
+	$(APXS) -Wc,-g -c $@.c 
+
 install1: $(MODULE1) 
 	$(APXS) -i -a -n $(MODULE_NAME1) $(MODULE1).la
 
@@ -54,7 +59,10 @@ install4: $(MODULE4)
 install5: $(MODULE5) 
 	$(APXS) -i -a -n $(MODULE_NAME5) $(MODULE5).la
 
-install: install1 installA install2 install3 install4 install5
+install6: $(MODULE6) 
+	$(APXS) -i -a -n $(MODULE_NAME5) $(MODULE5).la
+
+install: install1 installA install2 install3 install4 install5 install6
 
 clean:
 	rm -rf *.so *.o *.slo *.la *.lo .libs
