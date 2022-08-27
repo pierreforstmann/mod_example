@@ -36,6 +36,10 @@ Add to httpd.conf:
     SetHandler example5-handler
 </Location>
 
+<Location "/example6">
+    SetHandler example6-handler
+</Location>
+
 ```
 Create directories and files:
 ```
@@ -51,6 +55,8 @@ curl http://127.0.0.1/example2/test.dat.sum
 curl http://127.0.0.1/example3/
 curl http://127.0.0.1/example4/
 curl http://127.0.0.1/example5/
+curl 'http://127.0.0.1/example6/c?p1=v1&p2=v2'
+curl -X POST -d 'p1=v1' -d 'p2=v2' 'http://127.0.0.1/example6/p'
 ```
 
 
