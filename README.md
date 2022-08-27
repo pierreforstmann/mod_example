@@ -59,7 +59,7 @@ curl 'http://127.0.0.1/example6/c?p1=v1&p2=v2'
 curl -X POST -d 'p1=v1' -d 'p2=v2' 'http://127.0.0.1/example6/p'
 ```
 
-# to test POST from browser
+### to test POST from browser
 ```
 mkdir /var/www/html/example6
 cat post.hml
@@ -72,7 +72,7 @@ cat post.hml
 	<input type="submit" value="Submit">
 </form>
 ```
-# URL to use in browser
+### URL to use in browser
 ```
 file:///var/www/html/example6/post.html
 ```
