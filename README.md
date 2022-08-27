@@ -57,6 +57,23 @@ curl http://127.0.0.1/example4/
 curl http://127.0.0.1/example5/
 curl 'http://127.0.0.1/example6/c?p1=v1&p2=v2'
 curl -X POST -d 'p1=v1' -d 'p2=v2' 'http://127.0.0.1/example6/p'
+
+# to test POST from browser
+
+mkdir /var/www/html/example6
+cat post.hml
+<h4> example6 </h4>
+<form action="http://127.0.0.1/example6/post" method="POST">
+        <label for="name1">parm1:</label>
+	<input type="text" name="parm1"><br><br>
+        <label for="name1">parm2:</label>
+	<input type="text" name="parm2"><br><br>
+	<input type="submit" value="Submit">
+</form>
+
+# from browser
+file:///var/www/html/example6/post.html
+
 ```
 
 
