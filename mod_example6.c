@@ -180,14 +180,29 @@ static int example6_handler(request_rec *r)
         ap_set_module_config(r->request_config, &example6_module, data);
         apr_table_do(example6_cbf, r, args, NULL);
         data = ap_get_module_config(r->request_config, &example6_module);
+
     } else if (r->method_number == M_POST) {
+        ap_rprintf(r, "<h4>method=POST</h4>");
+
+	status = apr_uri_parse(r->pool, r->uri, &uri);
+        uri_root = (char *)(uri.path);
+        endof_uri_root = strchr(uri.path, '?');
+	if (endof_uri_root != NULL)
+	   uri_root[endof_uri_root - uri_root] = '\0';
+        ap_rprintf(r, "uri_root=%s<br>", uri_root);
+
         if (formData) {
             for (i = 0 ; ; i++) {
-                ap_log_error(APLOG_MARK, APLOG_DEBUG, 0, r->server, "plpgsql_handler: i=%d formData[i].value=%s", i, formData[i].value );
-                if (formData[i].value) {
-		 } else {
-		     break;
-		 }
+   	        if (formData[i].key && formData[i].value) {
+                     ap_rprintf(r, "key=%s<br>", formData[i].key);
+                     ap_rprintf(r, "value=%s<br>", formData[i].value);
+                } else if (formData[i].key) {
+                     ap_rprintf(r, "key=%s<br>", formData[i].key);
+                } else if (formData[i].value) {
+                     ap_rprintf(r, "value=%s<br>", formData[i].value);
+               } else {
+                    break;
+               }
 	      }
 	   }
 	}
